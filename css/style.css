@@ -1,5 +1,5 @@
 body{
-    background-color: #E5E5E5;;
+    background-color: #FAFAFA;
 }
 .topo{
     width: 100%;
@@ -22,7 +22,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FAFAFAFA ;
+    background-color: #FAFAFA;
 }
 .criarquizz{
     height: 181px;
@@ -105,7 +105,7 @@ body{
     margin-bottom: 10px;
 }
 
-.escondido{
+.escondido {
     display: none;
 }
 
@@ -187,4 +187,120 @@ body{
     text-align: left;
     color: #000000;
 
+}
+
+
+.criacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.criacao p {
+    font-size: 23px;
+    font-weight: 700;
+    font-family: Roboto;
+    line-height: 27px;
+    color:#000000;
+    margin-top: 71px;
+}
+
+.dados {
+    background-color: #FFFFFF;
+    width: 600px;
+    height: 256px;
+    margin-top: 27px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 528px;
+    height: 22px;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 400;
+    color: #BABABA;
+    padding: 11px;
+    margin-bottom: 9px;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    outline: none;
+}
+
+.prosseguir {
+    background-color: #EC362D;
+    width: 368.86px;
+    height: 54px;
+    color:#FFF5F4;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 24.61px;
+    border-radius: 15px;
+    margin-top: 85px;
+   
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.criacaoPerg {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulocrie {
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: 700;
+
+    margin-top: 63px;
+}
+
+.pergunta1, .resposta1 ,.incorretas1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 27px;
+    margin-left: 17px;
+}
+
+.caixa1 {
+    background-color: #FFFFFF;
+    width: 600px;
+    margin-top: 36px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+.caixa1 p {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.caixa2 {
+    background-color: #434CA0;
+    width: 601px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pergunta2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
