@@ -83,7 +83,7 @@
             </div>
         </div>  
     </div> 
-    <div class="basicQuizz escondido">
+    <div class="basicQuizz escondido"> <!--div mae daqui-->
     <div class="criacao ">
         <p>Comece pelo começo</p>
             <div class="dados">
@@ -97,7 +97,7 @@
     </div> <!-- final div criacao-->
 </div> <!--final div basicQuizz-->
 
-<div class="crieperguntas">
+<div class="crieperguntas escondido"> <!--div mae daqui-->
     <div class="criacaoPerg">
         <div class="titulocrie">
         Crie suas perguntas
@@ -130,14 +130,74 @@
                 <p>Pergunta 2</p>
                 <img src="./imagens/Vector.svg"/>
 
-            </div>
+            </div> <!-- final pergunta2-->
+            </div> <!-- final caixa2-->
 
-        </div>
+            <div class="caixa3">
+                <div class="pergunta3">
+                    <p>Pergunta 3</p>
+                    <img src="./imagens/Vector.svg"/>
+                </div> <!--final pergunta3-->
+        </div> <!--final caixa3-->
+
+        <div class="prosseguirPerg">Prosseguir pra criar níveis</div>
 
     </div> <!-- final criacaoPerg-->
 
-
 </div> <!-- final div mae crieperguntas -->
+
+<div class="crieNiveis escondido"> <!--div mae daqui-->
+    
+    <div class="criacaoNiveis">
+        <div class="textoNivel">Agora, decida os níveis</div>
+        <div class="caixa1-pai">
+        <div class="caixa1-filho">
+            <p>Nível 1</p>
+            <input type="text" placeholder="Título do nível" class="tituloPrimeira">
+            <input type="text" placeholder="% de acerto mínima" class="acertoPrimeira">
+            <input type="text" placeholder="URL da imagem do nível" class="imgPrimeira">
+            <input type="text" placeholder="Descrição do nível" class="descPrimeira">
+
+        </div>
+    </div> <!-- caixa1pai-->
+
+    <div class="caixa2-pai">
+        <div class="caixa2-filho">
+            <p>Nível 2</p>
+            <img src="./imagens/Vector.svg"/>
+
+        </div> <!-- final caixa2-filho-->
+        </div> <!-- final caixa2-pai-->
+
+        <div class="caixa3-pai">
+            <div class="caixa3-filho">
+                <p>Nível 3</p>
+                <img src="./imagens/Vector.svg"/>
+    
+            </div> <!-- final caixa3-filho-->
+            </div> <!-- final caixa3-pai-->
+
+            <div class="finalizar">Finalizar Quizz</div>
+
+    </div> <!-- criacaoNiveis-->
+
+</div> <!--div final mae niveis-->
+
+<div class="finalCriacao"> <!--div mae-->
+
+    <div class="finalizarCriacao">
+        <div class="texto-pronto">Seu quizz está pronto!</div>
+        <div class="resultadoFinal"></div>
+        <div class="Acesso">Acessar Quizz</div>
+        <div class="Voltar">Voltar pra home</div>
+
+    
+
+
+    </div>
+
+
+</div> <!--div mae finalcriacao-->
 
 
     
