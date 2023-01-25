@@ -1,0 +1,102 @@
+body{
+}
+.topo{
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EC362D;
+}
+
+.topo h1{
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-size: 37px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.container{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFAFA ;
+}
+.criarquizz{
+    height: 181px;
+    width: 1051px;
+    border-radius: 5px;
+    border: 1px dashed #d5d5d5;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.txt{
+    width: 250px;
+    height: 107px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.txt p{
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 23px;
+    color: #b9b9b9;
+    display: flex;
+    text-align: center;
+}
+.botaoquizz{
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px dashed #EC362D;
+    background-color: #FAFAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botaoquizz p{
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 21px;
+    display: flex;
+    text-align: center; 
+    color: #EC362D ;
+
+}
+.totalquizz{
+    width: 1050px;
+    height: 400px;
+    margin-top: 100px;
+
+}
+.totalquizz p{
+    font-family: 'Robot',sans-serif;
+    width: 158px;
+    height: 23px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 23px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.quizz{
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%);
+}
+
+.escondido{
+    display: none;
+
+}
