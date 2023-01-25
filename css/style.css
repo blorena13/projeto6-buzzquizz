@@ -1,5 +1,6 @@
 body{
     background-color: #FAFAFA;
+
 }
 .topo{
     width: 100%;
@@ -96,11 +97,19 @@ body{
 .txt-todos{
     width: 100%;
 }
-.quizz{
+.quizz1{
     width: 340px;
     height: 181px;
     border-radius: 5px;
-    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%),url(/assets/Rectangle\ 34.png);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.quizz2{
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%),url(/assets/Rectangle\ 36.png);
     margin-right: 10px;
     margin-bottom: 10px;
 }
@@ -304,3 +313,20 @@ input {
     align-items: center;
     justify-content: space-between;
 }
+@media(max-width:420px){  
+
+ .criarquizz{
+    width: 340px;
+    height: 181px;
+    margin-top: 30px;
+    margin-bottom: -40px;
+ }
+ .totalquizz{
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    margin-bottom: 100px;
+ }
+}
+/*totalquizz = oopcoes-quizz
