@@ -14,7 +14,7 @@ const elementpage2= document.querySelector('.pagina2');
 elementcont.classList.add('escondido');
 elementpage2.classList.remove('escondido');
 }
-//ao clicar no botao abrir a tela some e da inicio a tela 3
+//ao clicar no botao abrir a tela some e da inicio a tela 3 "comece pelo começo"
 
 function createquizz(){
 
@@ -23,33 +23,25 @@ function createquizz(){
     elementcont.classList.add('escondido');
     elementcreat.classList.remove('escondido');
 }
+
+// função para sair da tela dos dados e ir para as perguntas "crie suas perguntas"
 function savequizz(){
-// coloca o escondido na tela de criacao e tira da tela de criacao das perguntas
-    validquizz();
     const basic = document.querySelector('.basicQuizz');
     const create = document.querySelector('.crieperguntas');
 
-    basic.classList.add('escondido');
-    create.classList.remove('escondido');
-   }
-
-    function validquizz(){
     title = document.querySelector('.tituloquizz').value;
     url = document.querySelector('.imagemquizz').value;
     nquestion = document.querySelector('.qntdPerguntasquizz').value;
     nlevel = document.querySelector('.qntdNiveisquizz').value;
-    
-    if(url.startsWith("http://")|| url.startsWith("https://")){
-    console.log('url ok')
-    }else{
-        alert('formato URL invalido');
-    }
-     if(nquestion >2 && nlevel >1){
-      return true;
-    }
-    else{
-        alert('Numero de questões minimas: 3 numero de niveis minimo: 2')
-    }  
+
+    if (url.startsWith("http://")|| url.startsWith("https://") && nquestion >2 && nlevel >1 && title !== '') {
+    basic.classList.add('escondido');
+    create.classList.remove('escondido');
+    return true;
+} else {
+    alert('formato URL invalido');
+    alert('Numero de questões minimas: 3 numero de niveis minimo: 2');
+
 }
-
-
+    
+} 
