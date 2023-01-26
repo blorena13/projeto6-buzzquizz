@@ -26,7 +26,16 @@
                 <p>Criar Quizz</p>
             </button>
         </div>
-        <div class="totalquizz">
+
+        <div class="seusquizz escondido">
+            <div class="text-seus">Seus Quizzes
+                 <ion-icon name="add-circle"></ion-icon> 
+            </div>
+            <div class="seus-conteudos"></div> <!-- onde entra os quizzes criados-->
+            
+        </div>
+
+        <div class="totalquizz"> <!--vai receber os quizzes do servidor-->
             <div class="txt-todos"><p>Todos os quizzes</p></div>
         <!-- criei um quizz a titulo de molde-->
             <div class="quizz1" onclick="runquizz(this)">
@@ -47,8 +56,10 @@
             <div class="quizz1" onclick="runquizz(this)">
                 <img src="assets/Rectangle 34.png">
             </div>
-        </div>
-    </div>
+        </div> <!-- final totalquizz-->
+    </div> <!-- final container-->
+
+
     <div class="pagina2  escondido">
         <div class="titulodoquizz">
             <img src="assets/Rectangle 42.png">
@@ -113,16 +124,16 @@
         <div class="resposta1">
             <p>Resposta correta</p>
             <input type="text" placeholder="Resposta correta" class="textCorreta">
-            <input type="text" placeholder="URL da imagem" class="imgCorreta">
+            <input type="url" placeholder="URL da imagem" class="imgCorreta">
         </div> <!--final resposta1-->
         <div class="incorretas1">
             <p>Respostas incorretas</p>
             <input type="text" placeholder="Resposta incorreta 1" class="textIncorreta">
-            <input type="text" placeholder="URL da imagem 1" class="imgIncorreta">
+            <input type="url" placeholder="URL da imagem 1" class="imgIncorreta">
             <input type="text" placeholder="Resposta incorreta 2" class="textIncorreta">
-            <input type="text" placeholder="URL da imagem 2" class="imgIncorreta">
+            <input type="url" placeholder="URL da imagem 2" class="imgIncorreta">
             <input type="text" placeholder="Resposta incorreta 3" class="textIncorreta">
-            <input type="text" placeholder="URL da imagem 3" class="imgIncorreta">
+            <input type="url" placeholder="URL da imagem 3" class="imgIncorreta">
         </div> <!-- final incorretas1-->
 
         </div> <!--final caixa1-->
@@ -130,7 +141,7 @@
         <div class="caixa2">
             <div class="pergunta2">
                 <p>Pergunta 2</p>
-                <img src="./imagens/Vector.svg"/>
+                <img src="./assets/Vector.svg"/>
 
             </div> <!-- final pergunta2-->
             </div> <!-- final caixa2-->
@@ -138,11 +149,11 @@
             <div class="caixa3">
                 <div class="pergunta3">
                     <p>Pergunta 3</p>
-                    <img src="./imagens/Vector.svg"/>
+                    <img src="./assets/Vector.svg"/>
                 </div> <!--final pergunta3-->
         </div> <!--final caixa3-->
 
-        <div class="prosseguirPerg">Prosseguir pra criar níveis</div>
+        <div class="prosseguirPerg" onclick="DadosPergunta()">Prosseguir pra criar níveis</div>
 
     </div> <!-- final criacaoPerg-->
 
@@ -166,7 +177,7 @@
     <div class="caixa2-pai">
         <div class="caixa2-filho">
             <p>Nível 2</p>
-            <img src="./imagens/Vector.svg"/>
+            <img src="./assets/Vector.svg"/>
 
         </div> <!-- final caixa2-filho-->
         </div> <!-- final caixa2-pai-->
@@ -174,7 +185,7 @@
         <div class="caixa3-pai">
             <div class="caixa3-filho">
                 <p>Nível 3</p>
-                <img src="./imagens/Vector.svg"/>
+                <img src="./assets/Vector.svg"/>
     
             </div> <!-- final caixa3-filho-->
             </div> <!-- final caixa3-pai-->
@@ -203,7 +214,8 @@
 
 
 </main> 
-   
+
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

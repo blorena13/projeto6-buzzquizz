@@ -24,7 +24,7 @@ function createquizz(){
     elementcreat.classList.remove('escondido');
 }
 
-// função para sair da tela dos dados e ir para as perguntas "crie suas perguntas"
+// função para analisar a tela dos dados e ir para as perguntas "crie suas perguntas"
 function savequizz(){
     const basic = document.querySelector('.basicQuizz');
     const create = document.querySelector('.crieperguntas');
@@ -45,3 +45,25 @@ function savequizz(){
 }
     
 } 
+
+// função para analisar a tela de perguntas e ir pra níveis
+function DadosPergunta(){
+    const atual = document.querySelector('.crieperguntas');
+    const next = document.querySelector('.crieNiveis');
+
+
+    let textPergunta = document.querySelector('.textPrimeira').value;
+    let corPrimeira = document.querySelector('.corPrimeira').value;
+    let textCorreta = document.querySelector('.textCorreta').value;
+    let url = document.querySelector('.imgCorreta').value;
+    let textIncorreto = document.querySelector('.textIncorreta').value;
+    let imgIncorreta = document.querySelector('.imgIncorreta').value;
+
+    if (url.startsWith("http://")|| url.startsWith("https://") && imgIncorreta.startsWith("http://")|| imgIncorreta.startsWith("https://") && textPergunta.length >= 20 && corPrimeira.length <= 6 && textCorreta !== ''){
+        atual.classList.add('escondido');
+        next.classList.remove('escondido');
+        return true;
+    } else {
+        alert('informações inválidas');
+    }
+}
