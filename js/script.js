@@ -18,3 +18,5 @@ function createquizz(){
 // falta a parte da pagina 3 para selecionar e remover o escondido dela para trocar a tela
     elementcont.classList.add('escondido');
 }
+
+//
