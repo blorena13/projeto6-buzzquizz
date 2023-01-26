@@ -2,6 +2,7 @@ body{
     background-color: #FAFAFA;
 
 }
+
 .topo{
     width: 100%;
     height: 70px;
@@ -118,10 +119,20 @@ body{
     display: none;
 }
 
-.titulodoquizz img{
+.quizzimg{
     width: 100%;
     height: 227px;
     position: absolute; 
+}
+.quizzimgnomobile{
+  display: none;
+  background: #00000099;
+  position: absolute;
+  width: 100%;
+  height: 142px;
+  left: 0px;
+  top: 69px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 
 .titulodoquizz p{
@@ -158,11 +169,19 @@ body{
 .textodapergunta{
     width: 688.16px;
     height: 137.99px;
-    background: #434CA0;
+   
     display: flex;
     align-items: center;
     justify-content: center;
     
+}
+.txtpergum{
+    background: #434CA0; 
+}
+
+.txtpergdois{
+    background: #A0438D;
+
 }
 
 .textodapergunta p{
@@ -170,20 +189,22 @@ body{
     font-size: 23px;
     font-weight: 700;
     line-height: 27px;
-    letter-spacing: 0em;
     text-align: center;
     color: #FFFFFF;
 
 }
 
 .respostas{
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     margin: 24px;
+    width: 688.16;
 }
 .respostas img{
-    Width:329.91px;
+    Width: 329px;
     Height:175.2px;
 }
 
@@ -192,12 +213,87 @@ body{
     font-size: 20px;
     font-weight: 700;
     line-height: 23px;
-    letter-spacing: 0em;
     text-align: left;
     color: #000000;
 
 }
 
+.resultado{
+    Width: 759px;
+    Height:430px;
+    background-color: #FFFFFF;
+    margin-top: 44px; 
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.porcentagem{
+    background: #EC362D;
+    Width:727px;
+    Height:99px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.porcentagem p{
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: center;
+    color:#FFFFFF;
+}
+
+.resultadotxt{
+    display: flex;
+    Width:727px;
+}
+
+.resultadotxt p{
+    font-family: Roboto;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 21px;
+}
+
+.resultadotxt img{
+    width: 364px;
+    height: 273px;
+}
+
+.reiniciaquizz{
+    background: #EC362D;
+    border:#EC362D ;
+    width: 260.38px;
+    height: 52px;
+    border-radius: 15px;
+    margin-top: 57px;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+    color:#FFF5F4;
+}
+
+.voltaprahome{
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    color:#818181;
+    margin-top: 20px;
+    margin-bottom: 85px;
+}
 
 .criacao {
     display: flex;
@@ -327,6 +423,126 @@ input {
     flex-direction: column;
     height: 90%;
     margin-bottom: 100px;
- }
+}
+
+.quizzimg{
+ display: none;
+}
+.quizzimgnomobile{
+    display: flex;
+}
+.titulodoquizz p{
+    font-family: Roboto;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+}
+
+.perguntas{
+    width: 100%;
+    margin-top: 96px;
+    align-items: center;
+}
+.pergunta{
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 436px;
+    width: 375px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.textodapergunta{
+    height: 89px;
+    width: 340px;
+    margin-top: 18px;
+}
+.textodapergunta p{
+     font-family: Roboto;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.respostas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 340px;
+}
+.respostas img{
+    height: 113px;
+    width: 164px;
+}
+.respostas p{
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 163px;
+}
+.resultado{
+    width: 100%;  
+    justify-content: space-around;
+    height: 500px;
+    width:  100%;
+    background-color: #FFFFFF;
+
+}
+.porcentagem{
+    width: 340px;
+    height: 99px;
+    
+}
+.porcentagem p{
+    margin-left: 16px;
+    margin-right: 16px;
+    font-family: Roboto;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+.resultadotxt{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.resultadotxt img{
+    width: 340px;
+    height: 255px;
+    margin-bottom: 9px;
+}
+.resultadotxt p{
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    width: 340px;
+}
+.reiniciaquizz{
+    height: 44px;
+    width: 220.32000732421875px;
+    border-radius: 15px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.voltaprahome{
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+}
 }
 /*totalquizz = oopcoes-quizz
