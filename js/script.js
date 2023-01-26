@@ -1,4 +1,8 @@
 
+let title;
+let url;
+let nquestion;
+let nlevel;
 // ao clicar em algum dos quizz muda pra tela 2
 function runquizz(selecionado){
 
@@ -15,8 +19,37 @@ elementpage2.classList.remove('escondido');
 function createquizz(){
 
     const elementcont= document.querySelector('.container');
-// falta a parte da pagina 3 para selecionar e remover o escondido dela para trocar a tela
+    const elementcreat= document.querySelector('.basicQuizz');
     elementcont.classList.add('escondido');
+    elementcreat.classList.remove('escondido');
+}
+function savequizz(){
+// coloca o escondido na tela de criacao e tira da tela de criacao das perguntas
+    validquizz();
+    const basic = document.querySelector('.basicQuizz');
+    const create = document.querySelector('.crieperguntas');
+
+    basic.classList.add('escondido');
+    create.classList.remove('escondido');
+   }
+
+    function validquizz(){
+    title = document.querySelector('.tituloquizz').value;
+    url = document.querySelector('.imagemquizz').value;
+    nquestion = document.querySelector('.qntdPerguntasquizz').value;
+    nlevel = document.querySelector('.qntdNiveisquizz').value;
+    
+    if(url.startsWith("http://")|| url.startsWith("https://")){
+    console.log('url ok')
+    }else{
+        alert('formato URL invalido');
+    }
+     if(nquestion >2 && nlevel >1){
+      return true;
+    }
+    else{
+        alert('Numero de questões minimas: 3 numero de niveis minimo: 2')
+    }  
 }
 
-//
+
