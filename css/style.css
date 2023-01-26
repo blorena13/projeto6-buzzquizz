@@ -177,15 +177,19 @@ body{
 }
 
 .respostas{
+    background-color: purple ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 24px;
 }
+
+
 .respostas img{
-    Width:329.91px;
+    Width:331.91px;
     Height:175.2px;
 }
+
 
 .respostas p{
     font-family: Roboto;
@@ -234,7 +238,6 @@ input {
     font-size: 19px;
     font-style: italic;
     font-weight: 400;
-    color: #BABABA;
     padding: 11px;
     margin-bottom: 9px;
     border-radius: 5px;
@@ -395,7 +398,11 @@ input {
 
 
 
-@media(max-width:420px){  
+@media(max-width:1100px){  
+
+    body{
+        width: 100%;
+    }
 
  .criarquizz{
     width: 340px;
@@ -410,5 +417,47 @@ input {
     height: 90%;
     margin-bottom: 100px;
  }
+
+ .header {
+    width: 100%;
 }
-/*totalquizz = oopcoes-quizz
+
+.criacao, .criacaoPerg, .criacaoNiveis , .finalizarCriacao {
+    width: 375px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.caixa1 , .caixa2 , .caixa3 , .caixa1-pai , .caixa2-pai , .caixa3-pai , .dados{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.caixa2-filho , .caixa3-filho , .pergunta2 , .pergunta3 {
+    width: 343px;
+    margin-left: 16px;
+}
+
+input {
+    width: 320px;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prosseguir , .prosseguirPerg , .finalizar {
+    width: 324px;
+    margin-bottom: 61px;
+}
+
+}
+/*totalquizz = oopcoes-quizz*/
+

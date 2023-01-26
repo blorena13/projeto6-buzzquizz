@@ -16,6 +16,7 @@
     <header>
         <div class="topo"><h1>BuzzQuizz</h1></div>
     </header>
+    <main>
     <div class="container escondido">
         <div class="criarquizz">
             <div class="txt">
@@ -48,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="pagina2 escondido">
+    <div class="pagina2 ">
         <div class="titulodoquizz">
             <img src="assets/Rectangle 42.png">
             <p>O quão Potterhead é você?</p>
@@ -83,11 +84,12 @@
             </div>
         </div>  
     </div> 
+    
     <div class="basicQuizz escondido"> <!--div mae daqui-->
     <div class="criacao ">
         <p>Comece pelo começo</p>
             <div class="dados">
-            <input type="text" placeholder="Título do seu quizz" class="tituloquizz">
+            <input type="text" placeholder="Título do seu quizz" minlength="20" maxlength="65" class="tituloquizz">
             <input type="text" placeholder="URL da imagem do seu quizz" class="imagemquizz">
             <input type="text" placeholder="Quantidade de perguntas do quizz" class="qntdPerguntasquizz">
             <input type="text" placeholder="Quantidade de níveis do quizz" class="qntdNiveisquizz">
@@ -105,7 +107,7 @@
         <div class="caixa1">
             <div class="pergunta1">
             <p>Pergunta 1</p>
-            <input type="text" placeholder="Texto da pergunta" class="textPrimeira">
+            <input type="text" placeholder="Texto da pergunta" minlength="20" class="textPrimeira">
             <input type="text" placeholder="Cor de fundo da pergunta" class="corPrimeira">
         </div> <!--final div pergunta1-->
         <div class="resposta1">
@@ -153,10 +155,10 @@
         <div class="caixa1-pai">
         <div class="caixa1-filho">
             <p>Nível 1</p>
-            <input type="text" placeholder="Título do nível" class="tituloPrimeira">
+            <input type="text" placeholder="Título do nível" minlength="10" class="tituloPrimeira">
             <input type="text" placeholder="% de acerto mínima" class="acertoPrimeira">
             <input type="text" placeholder="URL da imagem do nível" class="imgPrimeira">
-            <input type="text" placeholder="Descrição do nível" class="descPrimeira">
+            <input type="text" placeholder="Descrição do nível" minlength="30" class="descPrimeira">
 
         </div>
     </div> <!-- caixa1pai-->
@@ -183,7 +185,7 @@
 
 </div> <!--div final mae niveis-->
 
-<div class="finalCriacao"> <!--div mae-->
+<div class="finalCriacao escondido"> <!--div mae-->
 
     <div class="finalizarCriacao">
         <div class="texto-pronto">Seu quizz está pronto!</div>
@@ -200,7 +202,7 @@
 </div> <!--div mae finalcriacao-->
 
 
-    
+</main> 
    
     <script src="js/script.js"></script>
   </body>
