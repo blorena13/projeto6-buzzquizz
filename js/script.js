@@ -24,7 +24,6 @@ function createquizz(){
     elementcreat.classList.remove('escondido');
 }
 
-// função para analisar a tela dos dados e ir para as perguntas "crie suas perguntas"
 function savequizz(){
     const basic = document.querySelector('.basicQuizz');
     const create = document.querySelector('.crieperguntas');
