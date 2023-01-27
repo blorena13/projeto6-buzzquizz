@@ -59,7 +59,7 @@ function DadosPergunta(){
     let textIncorreto = document.querySelector('.textIncorreta').value;
     let imgIncorreta = document.querySelector('.imgIncorreta').value;
 
-    if (url.startsWith("http://")|| url.startsWith("https://") && imgIncorreta.startsWith("http://")|| imgIncorreta.startsWith("https://") && textPergunta.length >= 20 && corPrimeira.length <= 6 && textCorreta !== ''){
+    if (url.startsWith("http://")|| url.startsWith("https://") && imgIncorreta.startsWith("http://")|| imgIncorreta.startsWith("https://") && textPergunta.length >= 20 && corPrimeira.every === /~^#(?:[0-9a-fa-F]{3}){1,2}$/ && textCorreta !== ''){
         atual.classList.add('escondido');
         next.classList.remove('escondido');
         return true;
