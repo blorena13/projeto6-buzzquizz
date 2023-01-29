@@ -59,7 +59,6 @@ function createquizz(){
     elementcreat.classList.remove('escondido');
 }
 
-// função para analisar a tela dos dados e ir para as perguntas "crie suas perguntas"
 function savequizz(){
     const basic = document.querySelector('.basicQuizz');
     const create = document.querySelector('.crieperguntas');
@@ -88,7 +87,8 @@ function DadosPergunta(){
     let textIncorreto = document.querySelector('.textIncorreta').value;
     let imgIncorreta = document.querySelector('.imgIncorreta').value;
 
-    if (url.startsWith("http://")|| url.startsWith("https://") && imgIncorreta.startsWith("http://")|| imgIncorreta.startsWith("https://") && textPergunta.length >= 20 &&  textCorreta !== ''){
+    if (url.startsWith("http://")|| url.startsWith("https://") && imgIncorreta.startsWith("http://")|| imgIncorreta.startsWith("https://") && textPergunta.length >= 20 && textCorreta !== ''){
+        
         atual.classList.add('escondido');
         next.classList.remove('escondido');
         return true;

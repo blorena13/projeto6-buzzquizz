@@ -117,6 +117,26 @@ body{
 .quizz{
     position: relative;
     display: inline;
+}    
+
+.text-seus {
+    display: flex;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 20px;
+    align-items: center;
+
+}
+
+.seusquizz {
+
+    width: 1050px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 69px;
+}
+.quizz{
     width: 340px;
     height: 181px;
     border-radius: 5px;
@@ -475,6 +495,7 @@ input {
     margin-bottom: 12px;
 }
 
+
 .finalizar {
     margin-top: 75px;
     margin-bottom: 15px;
@@ -518,7 +539,12 @@ input {
     color: #818181;
 }
 
+
 @media(max-width:1100px){  
+
+    body{
+        width: 100%;
+    }
 
     body{
         width: 100%;
@@ -697,5 +723,3 @@ text-align: center;
 
 }
 }
-
-/*totalquizz = oopcoes-quizz
