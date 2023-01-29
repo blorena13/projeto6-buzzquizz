@@ -5,6 +5,8 @@ let nquestion;
 let nlevel;
 let allquizz;
 
+let pontos = 0;
+
 function getallquizz(){
 
     const request = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes")
@@ -71,8 +73,8 @@ function savequizz(){
     create.classList.remove('escondido');
     return true;
 } else {
-    alert('formato URL invalido');
-    alert('Numero de questões minimas: 3 numero de niveis minimo: 2');
+    alert('Informações inválidas, preencha os dados corretamente.');
+    
 }
     
 } 
@@ -93,6 +95,20 @@ function DadosPergunta(){
         next.classList.remove('escondido');
         return true;
     } else {
-        alert('informações inválidas');
+        alert('informações inválidas, preencha os dados corretamente.');
+    }
+}
+
+function DadosNiveis(){
+    const pagAtual = document.querySelector('.crieNiveis');
+    const pagNext = document.querySelector('.finalCriacao');
+    let url = document.querySelector('.imgPrimeira').value;
+
+    if (url.startsWith("http://")|| url.startsWith("https://") ){
+        pagAtual.classList.add('escondido');
+        pagNext.classList.remove('escondido');
+        return true;
+    } else{
+        alert('informações inválidas, preencha os dados corretamente.');
     }
 }
