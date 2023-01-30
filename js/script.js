@@ -9,6 +9,8 @@ let contadorderespondida=0;
 let quantidadedequestoes;
 let nivel=0;
 let iddoquizz;
+let iddoquizzselecionado;
+let contadortotal=0;
 
 let allquizz;
 let quizzselecionado;
@@ -28,6 +30,7 @@ let allquizzin = (promisse) =>{
     allquizz= promisse.data;
     console.log(allquizz)
     templateallquizz();
+
 }
 
 let allquizzout =(error) => console.log('nao pegou todos quizz');
@@ -43,7 +46,7 @@ function templateallquizz(){
     
     for(let i=0; i<6 ;i++){
         template= `
-        <div class="quizz" onclick="runquizz(this)">
+        <div class="quizz" onclick="runquizz(this,${allquizz[i].id})">
         <div class="gradiant-color"></div>
         <label>${allquizz[i].title}</label>
         <img src ="${allquizz[i].image}"/>
@@ -58,7 +61,8 @@ function templateallquizz(){
 
 
 // ao clicar em algum dos quizz muda pra tela 2
-function runquizz(selecionado){
+function runquizz(selecionado, id){
+    pegarquizzporid(id)
 const elementcont= document.querySelector('.container');
 const elementpage2= document.querySelector('.pagina2');
 // adicionar a classe escondido para montar a tela 2
@@ -72,7 +76,7 @@ elementpage2.classList.remove('escondido');
 //funçao para pegar o quizz por id
 function pegarquizzporid(id){
 
-    const axiosget = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1`);
+    const axiosget = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`);
     axiosget.then(deucerto);
     axiosget.catch(deuruim);
 }
@@ -93,6 +97,8 @@ function backtohome(){
 
     elementpage2.classList.add('escondido')
     elementcont.classList.remove('escondido')
+    contadorderespondida=0; 
+    contadortotal=0;
 }
 
 //faz aparecer a questão
@@ -173,6 +179,7 @@ function respostaselecionada(selecionada){
 if(divrespostas.classList.contains('jáfoirespondido')){
     return
 }
+ contadortotal+=1;
    console.log(selecionada);
    if(selecionada.classList.contains('correta')){
    selecionada.classList.add('certa');
@@ -195,13 +202,16 @@ const repstransparentes=divrespostas.querySelectorAll('.imgresposta')
 
 function exibefinaldoquizz(){
     console.log(contadorderespondida);
-    console.log(quantidadedequestoes)
-let resultadoemporcentagem=((contadorderespondida)/quantidadedequestoes)*100;
+    console.log(quantidadedequestoes);
+    console.log(contadortotal);
+let resultadoemporcentagem=Math.round(((contadorderespondida)/quantidadedequestoes)*100);
 console.log(resultadoemporcentagem);
 console.log(nivel)
 const finaldoquizz=document.querySelector('.resultadoevoltar');
 
 for(let i=0;i<nivel.length;i++){
+    
+    if(contadortotal==quantidadedequestoes){
     if(nivel[i].minValue<=resultadoemporcentagem){
        finaldoquizz.innerHTML=`
 <div class="resultado ">
@@ -224,14 +234,17 @@ for(let i=0;i<nivel.length;i++){
 
 ` 
     }
+  }
 }
 
 }
 function reinicia(){
     const iniciodoquizz= document.querySelector('.titulodoquizz');
     iniciodoquizz.scrollIntoView({ behavior: "smooth" }); 
-    contadorderespondida=0;
+    contadorderespondida=0; 
+    contadortotal=0;
     pegarquizzporid(iddoquizz)
+   
 }
 
 
