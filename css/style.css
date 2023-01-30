@@ -179,6 +179,9 @@ body{
     width: 100%;
     height: 227px;
     position: absolute; 
+    color: rgba(0,0,0,0.6);
+    object-fit: cover;
+ 
 }
 .quizzimgnomobile{
   display: none;
@@ -189,6 +192,7 @@ body{
   left: 0px;
   top: 69px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  object-fit: cover;
 }
 
 .titulodoquizz p{
@@ -203,6 +207,8 @@ body{
     color:#FFFFFF;
     top:87px;
 }
+
+
 
 .perguntas{
   margin-top: 182px; 
@@ -231,14 +237,7 @@ body{
     justify-content: center;
     
 }
-.txtpergum{
-    background: #434CA0; 
-}
 
-.txtpergdois{
-    background: #A0438D;
-
-}
 
 .textodapergunta p{
     font-family: Roboto;
@@ -259,19 +258,34 @@ body{
     margin: 24px;
     width: 688.16;
 }
-.respostas img{
+
+
+.imgresposta img{
     Width: 329px;
     Height:175.2px;
+   object-position: cover;
 }
 
-.respostas p{
+
+
+.imgresposta p{
     font-family: Roboto;
     font-size: 20px;
     font-weight: 700;
     line-height: 23px;
     text-align: left;
     color: #000000;
-
+  
+}
+.certa p{
+   color: greenyellow;
+}
+.erou p{
+    color:  #FF4B4B;
+    ;
+}
+.naoselecionada{
+    opacity: 0.3;
 }
 
 .resultado{
@@ -339,6 +353,12 @@ body{
     color:#FFF5F4;
 }
 
+.finaall{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+}
+
 .voltaprahome{
     font-family: Roboto;
     font-size: 21px;
@@ -386,7 +406,6 @@ input {
     font-size: 19px;
     font-style: italic;
     font-weight: 400;
-    color: #BABABA;
     padding: 11px;
     margin-bottom: 9px;
     border-radius: 5px;
@@ -444,12 +463,16 @@ input {
     margin-bottom: 12px;
 }
 
-.caixa2 , .caixa3 , .caixa2-pai , .caixa3-pai  {
-    background-color: #434CA0;
+
+
+.caixa2  , .caixa3 , .caixa2-pai , .caixa3-pai {
+    background-color: #FFFFFF;
     width: 601px;
     height: 74px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     font-family: Roboto;
     font-size: 20px;
@@ -458,7 +481,8 @@ input {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.pergunta2, .pergunta3 , .caixa2-filho ,.caixa3-filho{
+.pergunta2 , .caixa2-filho ,.caixa3-filho{
+    background-color: #FFFFFF;
     width: 553px;
     display: flex;
     align-items: center;
