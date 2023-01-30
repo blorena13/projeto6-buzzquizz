@@ -268,16 +268,18 @@ function templatePerguntas(){
 
     for(let i = 1; i <= nquestion; i++) {
         let template = `
-        
+        <div class="esconder " >
         <div class="caixa2 ">
         <div class="pergunta2">
             <p>Pergunta ${[i]}</p>
-            <img src="./assets/Vector.svg" onclick="abaPerguntas()"/>
+            <img src="./assets/Vector.svg" onclick="togglePerguntas(this)"/>
 
         </div> <!-- final perg2-->
         </div> <!-- final caixa2-->
-
-        <div class="caixa1 escondido">
+</div>
+        <div class="container-opcoes escondido">
+        <div class="container-caixa1">
+        <div class="caixa1 ">
         <div class="pergunta1">
         <p>Pergunta ${[i]}</p>
         <input type="text" placeholder="Texto da pergunta" class="textPrimeira">
@@ -299,7 +301,8 @@ function templatePerguntas(){
     </div> <!-- final incorretas1-->
 
     </div> <!--final caixa1-->
-    
+    </div> 
+    </div>
         `;
 
         main.innerHTML += template;
@@ -309,23 +312,22 @@ function templatePerguntas(){
 
 
 
-function abaPerguntas(clique){
-    let primeiroClique = '';
-    let segundoClique = '';
+function togglePerguntas(clique){
+  const selecionado = clique.querySelector('.escondido');
+  const first = document.querySelector('.esconder');
+  const second = document.querySelector('.container-opcoes');
 
-    const first = document.querySelector('.caixa2');
-    const second = document.querySelector('.caixa1');
+  
 
-    if (primeiroClique === ''){
-        first.classList.add('escondido');
-        second.classList.remove('escondido');
-    } else if(segundoClique !== '' ){
-        first.classList.remove('escondido');
-        second.classList.add('escondido');
-
-    }
-    
-
+  if (selecionado !== null){
+    selecionado.classList.remove("escondido");
+  } if (clique === selecionado){
+    clique.classList.remove("escondido");
+  } else {
+    first.classList.add("escondido");
+    second.classList.remove("escondido");
+  }
+  console.log(clique);
 }
 
 
