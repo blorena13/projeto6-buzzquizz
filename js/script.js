@@ -16,6 +16,7 @@ let quizzselecionado;
 
 let pontos = 0;
 
+
 function getallquizz(){
 
     const request = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes")
@@ -364,8 +365,51 @@ function DadosNiveis(){
     if (url.startsWith("http://")|| url.startsWith("https://") ){
         pagAtual.classList.add('escondido');
         pagNext.classList.remove('escondido');
+        dadosFinais();
         return true;
     } else{
         alert('informações inválidas, preencha os dados corretamente.');
     }
+}
+
+function dadosFinais(){
+    const final = document.querySelector('.finalCriacao');
+
+    final.innerHTML  = '';
+
+    let template = `
+    <div class="finalizarCriacao">
+    <div class="texto-pronto">Seu quizz está pronto!</div>
+    <div class="resultadoFinal">${url.image} <p>${title.title}</p></div>
+    <div class="Acesso">Acessar Quizz</div>
+    <div class="Voltar">Voltar pra home</div>
+
+
+</div>
+`; 
+final.innerHTML += template;
+
+}
+
+function postarQuizz(){
+    const promessa = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
+
+    promessa.then(postagemCerto);
+    promessa.catch(postagemErro);
+}
+
+function postagemCerto(){
+    const meus = document.querySelector('.seusquizz');
+
+    meus.innerHTML = '';
+
+    let template = ` <div class="text-seus">Seus Quizzes
+    <ion-icon name="add-circle"></ion-icon> 
+</div>
+<div class="seus-conteudos"></div>
+`;
+}
+
+function postagemErro(error){
+    window.location.reload();
 }
