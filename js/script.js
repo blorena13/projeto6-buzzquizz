@@ -92,7 +92,7 @@ function templatePerguntas(){
     for(let i = 1; i <= nquestion; i++) {
         let template = `
         
-        <div class="caixa2">
+        <div class="caixa2 ">
         <div class="pergunta2">
             <p>Pergunta ${[i]}</p>
             <img src="./assets/Vector.svg" onclick="abaPerguntas()"/>
@@ -130,15 +130,27 @@ function templatePerguntas(){
     }
 }
 
-function abaPerguntas(){
+
+
+function abaPerguntas(clique){
+    let primeiroClique = '';
+    let segundoClique = '';
+
     const first = document.querySelector('.caixa2');
     const second = document.querySelector('.caixa1');
 
-    first.classList.add('escondido');
-    second.classList.remove('escondido');
+    if (primeiroClique === ''){
+        first.classList.add('escondido');
+        second.classList.remove('escondido');
+    } else if(segundoClique !== '' ){
+        first.classList.remove('escondido');
+        second.classList.add('escondido');
 
+    }
+    
 
 }
+
 
 
 // função para analisar a tela de perguntas e ir pra níveis
