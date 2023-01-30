@@ -4,6 +4,7 @@ let url;
 let nquestion;
 let nlevel;
 let allquizz;
+let quizzselecionado;
 
 function getallquizz(){
 
@@ -22,7 +23,6 @@ let allquizzin = (promisse) =>{
 let allquizzout =(error) => console.log('nao pegou todos quizz');
 
 getallquizz();
-console.log(allquizz)
 
 // depois de pegar todos os quizz fazer o template tela 1
 function templateallquizz(){
@@ -40,8 +40,8 @@ function templateallquizz(){
         `
         main.innerHTML+=template;
     }
-
 } 
+
 // ao clicar em algum dos quizz muda pra tela 2
 function runquizz(selecionado){
 const elementcont= document.querySelector('.container');
@@ -51,6 +51,7 @@ const elementpage2= document.querySelector('.pagina2');
 elementcont.classList.add('escondido');
 elementpage2.classList.remove('escondido');
 }
+
 //ao clicar no botao abrir a tela some e da inicio a tela 3 "comece pelo começo"
 function createquizz(){
     const elementcont= document.querySelector('.container');
@@ -88,7 +89,7 @@ function DadosPergunta(){
     let imgIncorreta = document.querySelector('.imgIncorreta').value;
 
     if (url.startsWith("http://")|| url.startsWith("https://") && imgIncorreta.startsWith("http://")|| imgIncorreta.startsWith("https://") && textPergunta.length >= 20 && textCorreta !== ''){
-        
+
         atual.classList.add('escondido');
         next.classList.remove('escondido');
         return true;
