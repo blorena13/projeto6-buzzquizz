@@ -64,9 +64,11 @@ function savequizz(){
     const basic = document.querySelector('.basicQuizz');
     const create = document.querySelector('.crieperguntas');
     title = document.querySelector('.tituloquizz').value;
+    nlevel = document.querySelector('.qntdPerguntasquizz').value;
+    nquestion=document.querySelector('.qntdNiveisquizz').value;
     url = document.querySelector('.imagemquizz').value;
-    nquestion = document.querySelector('.qntdPerguntasquizz').value;
-    nlevel = document.querySelector('.qntdNiveisquizz').value;
+    console.log(nlevel);
+    console.log(nquestion);
     if (url.startsWith("http://")|| url.startsWith("https://") && nquestion >2 && nlevel >1 && title !== '') {
     basic.classList.add('escondido');
     create.classList.remove('escondido');
@@ -75,8 +77,7 @@ function savequizz(){
     alert('formato URL invalido');
     alert('Numero de questões minimas: 3 numero de niveis minimo: 2');
 }
-    
-} 
+}
 // função para analisar a tela de perguntas e ir pra níveis
 function DadosPergunta(){
     const atual = document.querySelector('.crieperguntas');
@@ -95,5 +96,42 @@ function DadosPergunta(){
         return true;
     } else {
         alert('informações inválidas');
+    }
+}
+
+function createnivel(){
+
+    const nivel = document.querySelector('.container-niveis');
+    nivel.innerHTML = '';
+    for(let i=2; i<= nlevel; i++){
+        
+        nivel.innerHTML+= ` 
+        <div class="caixa2-pai">
+        <div class="caixa2-filho ">
+            <p>Nível ${[i]}</p>
+           <div class="img-folho" onclick="transitionivel(this)"><img src="./assets/Vector.svg"/></div>
+        </div> <!-- final caixa2-filho-->
+        </div> <!-- final caixa2-pai-->
+        <div class="caixa1-pai ">
+            <div class="caixa1-filho escondido ">
+                <p>Nível ${[i]}</p>
+                <input type="text" placeholder="Título do nível" minlength="10" class="tituloPrimeira">
+                <input type="text" placeholder="% de acerto mínima" class="acertoPrimeira">
+                <input type="url" placeholder="URL da imagem do nível" class="imgPrimeira">
+                <input type="text" placeholder="Descrição do nível" minlength="30" class="descPrimeira">
+    
+            </div> <!-- caixa1filho-->
+    
+        </div>
+        `
+
+    }
+}
+function transitionivel(selecionado){
+
+    const transitionf= document.querySelector('caixa1-filho');
+   
+    if(selecionado !== null){
+    transitionf.classList.remove('escondido');
     }
 }
