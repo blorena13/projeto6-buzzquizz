@@ -17,7 +17,7 @@
         <div class="topo"><h1>BuzzQuizz</h1></div>
     </header>
     <main>
-    <div class="container ">
+    <div class="container">
         <div class="criarquizz">
             <div class="txt">
                 <p>Você não criou nenhum quizz ainda :(</p>
@@ -101,9 +101,9 @@
 
 </div> <!-- final div mae crieperguntas -->
 
-<div class="crieNiveis escondido"> <!--div mae daqui-->
+<div class="crieNiveis escondido " > <!--div mae daqui-->
     <div class="criacaoNiveis">
-        <div class="textoNivel">Agora, decida os níveis</div>
+  <!--  <div class="textoNivel">Agora, decida os níveis</div> -->
         <div class="caixa1-pai">
         <div class="caixa1-filho">
             <p>Nível 1</p>
@@ -115,22 +115,25 @@
         </div> <!-- caixa1filho-->
 
     </div> <!-- caixa1pai-->
-
-    <div class="caixa2-pai">
-        <div class="caixa2-filho">
+   <div class="container-niveis">
+    <div class="caixa2-pai ">
+        <div class="caixa2-filho ">
             <p>Nível 2</p>
-            <img src="./assets/Vector.svg"/>
-
+           <div class="img-folho" onclick="transitionivel(this)"><img src="./assets/Vector.svg"/></div>
         </div> <!-- final caixa2-filho-->
         </div> <!-- final caixa2-pai-->
-
-        <div class="caixa3-pai">
-            <div class="caixa3-filho">
-                <p>Nível 3</p>
-                <img src="./assets/Vector.svg"/>
+        <div class="caixa1-pai ">
+            <div class="caixa1-filho escondido ">
+                <p>Nível 1</p>
+                <input type="text" placeholder="Título do nível" minlength="10" class="tituloPrimeira">
+                <input type="text" placeholder="% de acerto mínima" class="acertoPrimeira">
+                <input type="url" placeholder="URL da imagem do nível" class="imgPrimeira">
+                <input type="text" placeholder="Descrição do nível" minlength="30" class="descPrimeira">
     
-            </div> <!-- final caixa3-filho-->
-            </div> <!-- final caixa3-pai-->
+            </div> <!-- caixa1filho-->
+    
+        </div>
+    </div>
 
             <div class="finalizar" onclick="DadosNiveis()">Finalizar Quizz</div>
 
@@ -146,14 +149,10 @@
         <div class="resultadoFinal"></div>
         <div class="Acesso">Acessar Quizz</div>
         <div class="Voltar">Voltar pra home</div>
-
-
     </div>
 
 </div> <!--div mae finalcriacao-->
-
 </main>
-
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
