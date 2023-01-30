@@ -2,8 +2,10 @@
 let title;
 let url;
 let nquestion;
-let nlevel;
+let nlevel = 4;
 let allquizz;
+let quizzselecionado;
+
 
 let pontos = 0;
 
@@ -44,6 +46,9 @@ function templateallquizz(){
     }
 
 } 
+
+
+
 // ao clicar em algum dos quizz muda pra tela 2
 function runquizz(selecionado){
 const elementcont= document.querySelector('.container');
@@ -71,6 +76,7 @@ function savequizz(){
     if (url.startsWith("http://")|| url.startsWith("https://") && nquestion >2 && nlevel >1 && title !== '') {
     basic.classList.add('escondido');
     create.classList.remove('escondido');
+    templatePerguntas();
     return true;
 } else {
     alert('Informações inválidas, preencha os dados corretamente.');
@@ -78,6 +84,63 @@ function savequizz(){
 }
     
 } 
+
+function templatePerguntas(){
+    const main = document.querySelector('.container-perguntas');
+    main.innerHTML = '';
+
+    for(let i = 1; i <= nquestion; i++) {
+        let template = `
+        
+        <div class="caixa2">
+        <div class="pergunta2">
+            <p>Pergunta ${[i]}</p>
+            <img src="./assets/Vector.svg" onclick="abaPerguntas()"/>
+
+        </div> <!-- final perg2-->
+        </div> <!-- final caixa2-->
+
+        <div class="caixa1 escondido">
+        <div class="pergunta1">
+        <p>Pergunta ${[i]}</p>
+        <input type="text" placeholder="Texto da pergunta" class="textPrimeira">
+        <input type="text" placeholder="Cor de fundo da pergunta" class="corPrimeira">
+    </div> <!--final div pergunta1-->
+    <div class="resposta1">
+        <p>Resposta correta</p>
+        <input type="text" placeholder="Resposta correta" class="textCorreta">
+        <input type="url" placeholder="URL da imagem" class="imgCorreta">
+    </div> <!--final resposta1-->
+    <div class="incorretas1">
+        <p>Respostas incorretas</p>
+        <input type="text" placeholder="Resposta incorreta 1" class="textIncorreta">
+        <input type="url" placeholder="URL da imagem 1" class="imgIncorreta">
+        <input type="text" placeholder="Resposta incorreta 2" class="textIncorreta">
+        <input type="url" placeholder="URL da imagem 2" class="imgIncorreta">
+        <input type="text" placeholder="Resposta incorreta 3" class="textIncorreta">
+        <input type="url" placeholder="URL da imagem 3" class="imgIncorreta">
+    </div> <!-- final incorretas1-->
+
+    </div> <!--final caixa1-->
+    
+        `;
+
+        main.innerHTML += template;
+
+    }
+}
+
+function abaPerguntas(){
+    const first = document.querySelector('.caixa2');
+    const second = document.querySelector('.caixa1');
+
+    first.classList.add('escondido');
+    second.classList.remove('escondido');
+
+
+}
+
+
 // função para analisar a tela de perguntas e ir pra níveis
 function DadosPergunta(){
     const atual = document.querySelector('.crieperguntas');
@@ -97,7 +160,10 @@ function DadosPergunta(){
     } else {
         alert('informações inválidas, preencha os dados corretamente.');
     }
+    
 }
+
+
 
 function DadosNiveis(){
     const pagAtual = document.querySelector('.crieNiveis');
