@@ -16,16 +16,26 @@
     <header>
         <div class="topo"><h1>BuzzQuizz</h1></div>
     </header>
-    <div class="container escondido">
+    <main>
+    <div class="container ">
         <div class="criarquizz">
             <div class="txt">
                 <p>Você não criou nenhum quizz ainda :(</p>
             </div>
-            <button class="botaoquizz"><p>
+            <button class="botaoquizz" onclick="createquizz(this)">
                 <p>Criar Quizz</p>
             </button>
         </div>
-        <div class="totalquizz">
+
+        <div class="seusquizz escondido">
+            <div class="text-seus">Seus Quizzes
+                 <ion-icon name="add-circle"></ion-icon> 
+            </div>
+            <div class="seus-conteudos"></div> <!-- onde entra os quizzes criados-->
+            
+        </div> <!--final div seusquizz-->
+
+        <div class="totalquizz"> <!--vai receber os quizzes do servidor-->
             <div class="txt-todos"><p>Todos os quizzes</p></div>
         <!-- criei um quizz a titulo de molde-->
             <div class="quizz1" onclick="runquizz(this)">
@@ -48,18 +58,21 @@
             </div>
         </div>
     </div>
+    
     <div class="pagina2">
     </div>
+
+
     <div class="basicQuizz escondido">
     <div class="criacao ">
         <p>Comece pelo começo</p>
             <div class="dados">
             <input type="text" placeholder="Título do seu quizz" class="tituloquizz">
-            <input type="text" placeholder="URL da imagem do seu quizz" class="imagemquizz">
+            <input type="url" placeholder="URL da imagem do seu quizz" class="imagemquizz">
             <input type="text" placeholder="Quantidade de perguntas do quizz" class="qntdPerguntasquizz">
             <input type="text" placeholder="Quantidade de níveis do quizz" class="qntdNiveisquizz">
         </div> <!-- final div dados-->
-            <div class="prosseguir">Prosseguir pra criar perguntas</div>
+            <div class="prosseguir" onclick="savequizz()">Prosseguir pra criar perguntas</div>
         
     </div> <!-- final div criacao-->
 </div> <!--final div basicQuizz-->
@@ -69,45 +82,82 @@
         <div class="titulocrie">
         Crie suas perguntas
     </div>
-        <div class="caixa1">
-            <div class="pergunta1">
-            <p>Pergunta 1</p>
-            <input type="text" placeholder="Texto da pergunta" class="textPrimeira">
-            <input type="text" placeholder="Cor de fundo da pergunta" class="corPrimeira">
-        </div> <!--final div pergunta1-->
-        <div class="resposta1">
-            <p>Resposta correta</p>
-            <input type="text" placeholder="Resposta correta" class="textCorreta">
-            <input type="text" placeholder="URL da imagem" class="imgCorreta">
-        </div> <!--final resposta1-->
-        <div class="incorretas1">
-            <p>Respostas incorretas</p>
-            <input type="text" placeholder="Resposta incorreta 1" class="textIncorreta">
-            <input type="text" placeholder="URL da imagem 1" class="imgIncorreta">
-            <input type="text" placeholder="Resposta incorreta 2" class="textIncorreta">
-            <input type="text" placeholder="URL da imagem 2" class="imgIncorreta">
-            <input type="text" placeholder="Resposta incorreta 3" class="textIncorreta">
-            <input type="text" placeholder="URL da imagem 3" class="imgIncorreta">
-        </div> <!-- final incorretas1-->
+      
 
-        </div> <!--final caixa1-->
-
+        <div class="container-perguntas">
         <div class="caixa2">
             <div class="pergunta2">
                 <p>Pergunta 2</p>
-                <img src="./imagens/Vector.svg"/>
+                <img src="./assets/Vector.svg"/>
 
-            </div>
-
+            </div> <!-- final perg2-->
+            </div> <!-- final caixa2-->
         </div>
+
+
+        <div class="prosseguirPerg" onclick="DadosPergunta()">Prosseguir pra criar níveis</div>
 
     </div> <!-- final criacaoPerg-->
 
-
 </div> <!-- final div mae crieperguntas -->
 
+<div class="crieNiveis escondido"> <!--div mae daqui-->
+    <div class="criacaoNiveis">
+        <div class="textoNivel">Agora, decida os níveis</div>
+        <div class="caixa1-pai">
+        <div class="caixa1-filho">
+            <p>Nível 1</p>
+            <input type="text" placeholder="Título do nível" minlength="10" class="tituloPrimeira">
+            <input type="text" placeholder="% de acerto mínima" class="acertoPrimeira">
+            <input type="url" placeholder="URL da imagem do nível" class="imgPrimeira">
+            <input type="text" placeholder="Descrição do nível" minlength="30" class="descPrimeira">
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="js/script.js"></script>
+        </div> <!-- caixa1filho-->
+
+    </div> <!-- caixa1pai-->
+
+    <div class="caixa2-pai">
+        <div class="caixa2-filho">
+            <p>Nível 2</p>
+            <img src="./assets/Vector.svg"/>
+
+        </div> <!-- final caixa2-filho-->
+        </div> <!-- final caixa2-pai-->
+
+        <div class="caixa3-pai">
+            <div class="caixa3-filho">
+                <p>Nível 3</p>
+                <img src="./assets/Vector.svg"/>
+    
+            </div> <!-- final caixa3-filho-->
+            </div> <!-- final caixa3-pai-->
+
+            <div class="finalizar" onclick="DadosNiveis()">Finalizar Quizz</div>
+
+        </div> <!-- criacaoNiveis-->
+
+</div> <!-- final div mae crieNiveis -->
+
+
+<div class="finalCriacao escondido"> <!--div mae-->
+
+    <div class="finalizarCriacao">
+        <div class="texto-pronto">Seu quizz está pronto!</div>
+        <div class="resultadoFinal"></div>
+        <div class="Acesso">Acessar Quizz</div>
+        <div class="Voltar">Voltar pra home</div>
+
+
+    </div>
+
+</div> <!--div mae finalcriacao-->
+
+</main>
+
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+    <script src="js/script.js"></script>
+
   </body>
 </html>

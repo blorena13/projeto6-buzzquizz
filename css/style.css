@@ -25,6 +25,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: #FAFAFA;
+    margin-top:7px;
 }
 .criarquizz{
     height: 181px;
@@ -64,6 +65,21 @@ body{
     justify-content: center;
     align-items: center;
 }
+.ion-icon{
+    color:#EC362D;
+    width: 31px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 17px;
+}
+.seus-conteudos {
+    width: 1050px;
+    height: 50px;
+    margin-top: 13px;
+}
+
 .botaoquizz p{
     font-family: 'Roboto',sans-serif;
     font-style: normal;
@@ -98,21 +114,61 @@ body{
 .txt-todos{
     width: 100%;
 }
-.quizz1{
+.quizz{
+    position: relative;
+    display: inline;
+}    
+
+.text-seus {
+    display: flex;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 20px;
+    align-items: center;
+
+}
+
+.seusquizz {
+
+    width: 1050px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 69px;
+}
+.quizz{
     width: 340px;
     height: 181px;
     border-radius: 5px;
-    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%),url(/assets/Rectangle\ 34.png);
     margin-right: 10px;
     margin-bottom: 10px;
 }
-.quizz2{
+.quizz img{
     width: 340px;
     height: 181px;
     border-radius: 5px;
-    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%),url(/assets/Rectangle\ 36.png);
-    margin-right: 10px;
-    margin-bottom: 10px;
+}
+.quizz label{
+    bottom: 0;
+    position: absolute;
+    height: 54px;
+    width: 301px;
+    font-family: 'Roboto',sans-serif;
+    border-radius: nullpx;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    margin-left: 18px;  
+    color:#FFFFFF;
+    
+}
+.gradiant-color{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0)0%,rgba(0,0,0,0.5)64.58%,#000000 100%);
 }
 
 .escondido {
@@ -151,6 +207,8 @@ body{
     color:#FFFFFF;
     top:87px;
 }
+
+
 
 .perguntas{
   margin-top: 182px; 
@@ -313,7 +371,7 @@ body{
     margin-bottom: 85px;
 }
 
-.criacao {
+.criacao , .criacaoPerg, .criacaoNiveis , .finalizarCriacao {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -348,7 +406,6 @@ input {
     font-size: 19px;
     font-style: italic;
     font-weight: 400;
-    color: #BABABA;
     padding: 11px;
     margin-bottom: 9px;
     border-radius: 5px;
@@ -356,7 +413,7 @@ input {
     outline: none;
 }
 
-.prosseguir {
+.prosseguir , .prosseguirPerg , .finalizar{
     background-color: #EC362D;
     width: 368.86px;
     height: 54px;
@@ -375,15 +432,7 @@ input {
     
 }
 
-.criacaoPerg {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.titulocrie {
+.titulocrie , .textoNivel , .texto-pronto {
     font-family: Roboto;
     font-size: 23px;
     font-weight: 700;
@@ -414,20 +463,114 @@ input {
     margin-bottom: 12px;
 }
 
-.caixa2 {
-    background-color: #434CA0;
+.caixa2  , .caixa2-pai , .caixa3-pai {
+    background-color: #FFFFFF;
     width: 601px;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
     font-family: Roboto;
     font-size: 20px;
     font-weight: 700;
+    margin-top: 24px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.pergunta2 {
+.pergunta2 , .caixa2-filho ,.caixa3-filho{
+    background-color: #FFFFFF;
+    width: 553px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 15px;
 }
-@media(max-width:420px){  
+
+.caixa1 input, .caixa1-filho input {
+    margin-bottom: 14px;
+}
+.prosseguirPerg {
+    margin-top: 81px;
+    margin-bottom: 15px;
+}
+.caixa1-pai {
+    width: 600px;
+    height: 316px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 43px;
+}
+.caixa1-filho {
+    margin-left: 16px;
+}
+
+.caixa1-filho p {
+    margin-bottom: 12px;
+}
+
+
+.finalizar {
+    margin-top: 75px;
+    margin-bottom: 15px;
+}
+
+.resultadoFinal {
+    background-color: pink;
+    width: 500px;
+    height: 266px;
+    border-radius: 5px;
+    margin-top: 46px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.Acesso {
+    background-color: #EC362D;
+    width: 220px;
+    height: 44px;
+    color: #FFF5F4;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    border-radius: 15px;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.Voltar {
+    width: 219.64px;
+    height: 44px;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    color: #818181;
+}
+
+
+@media(max-width:1100px){  
+
+    body{
+        width: 100%;
+    }
+
+    body{
+        width: 100%;
+    }
 
  .criarquizz{
     width: 340px;
@@ -441,6 +584,43 @@ input {
     flex-direction: column;
     height: 90%;
     margin-bottom: 100px;
+}
+
+
+.criacao, .criacaoPerg, .criacaoNiveis , .finalizarCriacao {
+    width: 375px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.caixa1 , .caixa2 , .caixa3 , .caixa1-pai , .caixa2-pai , .caixa3-pai , .dados{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.caixa2-filho , .caixa3-filho , .pergunta2 , .pergunta3 {
+    width: 343px;
+    margin-left: 16px;
+}
+
+input {
+    width: 320px;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prosseguir , .prosseguirPerg , .finalizar {
+    width: 324px;
+    margin-bottom: 61px;
 }
 
 .quizzimg{
@@ -565,4 +745,3 @@ text-align: center;
 
 }
 }
-/*totalquizz = oopcoes-quizz
